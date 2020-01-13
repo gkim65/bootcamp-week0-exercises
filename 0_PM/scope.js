@@ -1,7 +1,7 @@
 /**
  * Part 1:
- *    What will print and why?
- *    What will change if we delete line 15? Why?
+ *    What will print and why? >>> 1 2 undefined (function x gives undefined because it didn't assign a value to a )
+ *    What will change if we delete line 15? Why? >>>> 1 2 1 (This time it prints 1 instead of undefined because there is a global variable `a` defined previously)
  * 
  * Part 2:
  *    Change to ES6 syntax (use arrow functions and change var to let).
@@ -11,17 +11,16 @@
  *        console logs.
  */
 
-function x() {
-  var a;
+const x = () => {
   console.log(a);
 }
 
-function y() {
-  var a = 2;
+const y = () => {
+  a = 2;
   console.log(a);
   x();
 }
 
-var a = 1;
+let a = 1;
 console.log(a);
 y();

@@ -1,8 +1,22 @@
 import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
+import AllTasks from './AllTasks/index'
+import HomePage from './HomePage'
+import theme from './theme'
 
 const App = () => (
   <div>
-    Beep boop hi there, I&apos;m your personal assistant hehe
+    <ThemeProvider theme={theme}>
+      <Switch>
+        <Route path="/allTasks">
+          <AllTasks />
+        </Route>
+        <Route path="/">
+          <HomePage />
+        </Route>
+      </Switch>
+    </ThemeProvider>
   </div>
 )
 
